@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class User implements Movable {
 
-    private Scanner inputScanner;
+    private final Scanner inputScanner;
 
     public User() {
         inputScanner = new Scanner(System.in);
@@ -10,10 +10,8 @@ public class User implements Movable {
 
     @Override
     public Move getMove() {
-        // Выведем запрос на ввод
         System.out.print("Камень - 'К',\nНожницы - 'Н', \nБумага - 'Б' \nЯщерица - 'Я' \nСпок - 'С' \nКаков будет Ваш ход?");
 
-        // Прочитаем ввод пользователя
         String userInput = inputScanner.nextLine();
         userInput = userInput.toUpperCase();
         char firstLetter = userInput.charAt(0);
@@ -32,7 +30,6 @@ public class User implements Movable {
                     return Move.SPOCK;
             }
         }
-        // Ввод некорректный. Выведем запрос на ввод снова.
         return getMove();
     }
 

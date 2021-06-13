@@ -10,25 +10,18 @@ public enum Move {
      * 0 в случае ничьей
      */
     public int compareMoves(Move otherMove) {
-        // Ничья
+        //draw
         if (this == otherMove)
             return 0;
 
 
-        switch (this) {
-            case ROCK:
-                return ((otherMove == SCISSORS)||(otherMove == LIZARD) ? 1 : -1);
-            case PAPER:
-                return ((otherMove == ROCK)||(otherMove == SPOCK) ? 1 : -1);
-            case SCISSORS:
-                return ((otherMove == PAPER)||(otherMove == LIZARD) ? 1 : -1);
-            case LIZARD:
-                return ((otherMove == SPOCK)||(otherMove == PAPER) ? 1 : -1);
-            case SPOCK:
-                return ((otherMove == SCISSORS)||(otherMove == ROCK)  ? 1 : -1);
-        }
+        return switch (this) {
+            case ROCK -> ((otherMove == SCISSORS) || (otherMove == LIZARD) ? 1 : -1);
+            case PAPER -> ((otherMove == ROCK) || (otherMove == SPOCK) ? 1 : -1);
+            case SCISSORS -> ((otherMove == PAPER) || (otherMove == LIZARD) ? 1 : -1);
+            case LIZARD -> ((otherMove == SPOCK) || (otherMove == PAPER) ? 1 : -1);
+            case SPOCK -> ((otherMove == SCISSORS) || (otherMove == ROCK) ? 1 : -1);
+        };
 
-        // Этот код не должен выполняться никогда
-        return 0;
     }
 }

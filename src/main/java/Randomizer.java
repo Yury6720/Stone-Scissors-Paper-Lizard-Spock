@@ -1,13 +1,10 @@
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Formatter;
-
-import static javax.xml.crypto.dsig.SignatureMethod.HMAC_SHA256;
 
 public class Randomizer {
     SecureRandom secureRandom;
@@ -37,6 +34,7 @@ public class Randomizer {
             return "";
         }
     }
+
     public String ToHexString(byte[] bytes) {
         Formatter formatter = new Formatter();
         for (byte b : bytes) {
@@ -45,14 +43,4 @@ public class Randomizer {
         return formatter.toString();
     }
 
-    //    SecureRandom secureRandom = new SecureRandom();
-//    int ir = secureRandom.nextInt();
-//    SecureRandom secureRandom = SecureRandom.getInstance("HmacSHA256");
-//
-//    public Randimizer() throws NoSuchAlgorithmException {
-//    }
-//int ir = secureRandom.nextInt()
-//    public void setSecureRandom(SecureRandom secureRandom) {
-//        byte[] bytes = secureRandom.generateSeed(16);
-//    }
 }
