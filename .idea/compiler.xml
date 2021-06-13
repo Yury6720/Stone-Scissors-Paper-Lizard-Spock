@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Stone-Scissors-Paper-Lizard-Spock" />
+        <module name="Rock-Scissors-Paper-Lizard-Spock" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Stone-Scissors-Paper-Lizard-Spock" target="15" />
+      <module name="Rock-Scissors-Paper-Lizard-Spock" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>

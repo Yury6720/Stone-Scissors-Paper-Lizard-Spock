@@ -1,17 +1,19 @@
-public class StoneScissorsPaperLizardSpock {
+public class RockScissorsPaperLizardSpock {
 
     private User user;
     private Computer computer;
     private int userScore;
     private int computerScore;
     private int numberOfGames;
+    private Randomizer randomizer;
 
-    public StoneScissorsPaperLizardSpock() {
+    public RockScissorsPaperLizardSpock() {
         user = new User();
         computer = new Computer();
         userScore = 0;
         computerScore = 0;
         numberOfGames = 0;
+        randomizer = new Randomizer();
     }
 
     public void startGame() {
@@ -19,8 +21,12 @@ public class StoneScissorsPaperLizardSpock {
 
         Move userMove = user.getMove();
         Move computerMove = computer.getMove();
-        System.out.println("\nВаш ход  " + userMove + ".");
+        String key = randomizer.GenerateSecureKey();
+        String hex = randomizer.CalculateHMAC(computerMove.toString(),key);
+        System.out.println("hex: " + hex);
+        System.out.println("Ваш ход  " + userMove + ".");
         System.out.println("Ход компьютера  " + computerMove + ".\n");
+        System.out.println("Key: " + key);
 
         int compareMoves = userMove.compareMoves(computerMove);
         switch (compareMoves) {
@@ -63,6 +69,7 @@ public class StoneScissorsPaperLizardSpock {
 
         // Вывод линии
         System.out.print("|");
+
         printDashes(10);
         System.out.print("+");
         printDashes(10);
@@ -86,7 +93,7 @@ public class StoneScissorsPaperLizardSpock {
 
     private void printDashes(int num){
 //        for (int i = 0; i < num; i++){
-//            System.out.println("-");
+//            System.out.println("-\t");
 //
 //        }
     }

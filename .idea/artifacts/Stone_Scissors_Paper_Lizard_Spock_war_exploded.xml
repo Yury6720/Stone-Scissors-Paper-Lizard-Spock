@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Stone-Scissors-Paper-Lizard-Spock:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Stone_Scissors_Paper_Lizard_Spock_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Rock-Scissors-Paper-Lizard-Spock/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Rock-Scissors-Paper-Lizard-Spock" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

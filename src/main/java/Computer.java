@@ -1,11 +1,15 @@
 import java.util.Random;
 
-public class Computer implements Movable{
+public class Computer implements Movable {
+    Randomizer randomizer = new Randomizer();
+
+
+
+
     @Override
     public Move getMove() {
         Move[] moves = Move.values();
-        Random random = new Random();
-        int index = random.nextInt(moves.length);
+        int index = randomizer.secureRandom.nextInt(moves.length);
         return moves[index];
     }
 }
