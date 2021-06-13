@@ -17,13 +17,13 @@ public class RockScissorsPaperLizardSpock {
     }
 
     public void startGame() {
-        System.out.println("КАМЕНЬ, НОЖНИЦЫ, БУМАГА!");
-
-        Move userMove = user.getMove();
+        System.out.println("КАМЕНЬ, НОЖНИЦЫ, БУМАГА, ЯЩЕРИЦА, СПОК!");
         Move computerMove = computer.getMove();
         String key = randomizer.GenerateSecureKey();
         String hex = randomizer.CalculateHMAC(computerMove.toString(), key);
         System.out.println("hex: " + hex);
+        Move userMove = user.getMove();
+
         System.out.println("Ваш ход  " + userMove + ".");
         System.out.println("Ход компьютера  " + computerMove + ".\n");
         System.out.println("Key: " + key);

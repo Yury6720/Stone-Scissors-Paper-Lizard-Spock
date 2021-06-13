@@ -10,7 +10,7 @@ public class User implements Movable {
 
     @Override
     public Move getMove() {
-        System.out.print("Камень - 'К',\nНожницы - 'Н', \nБумага - 'Б' \nЯщерица - 'Я' \nСпок - 'С' \nКаков будет Ваш ход?");
+        System.out.print("Камень - 'К',\nНожницы - 'Н', \nБумага - 'Б' \nЯщерица - 'Я' \nСпок - 'С' \nКаков будет Ваш ход?\n");
 
         String userInput = inputScanner.nextLine();
         userInput = userInput.toUpperCase();
@@ -26,15 +26,16 @@ public class User implements Movable {
                     return Move.SCISSORS;
                 case 'Я':
                     return Move.LIZARD;
-                case 'C':
+                case 'С':
                     return Move.SPOCK;
             }
         }
+        System.out.println("Упс! Ход неверный \nПопробуйте ещё\n");
         return getMove();
     }
 
     public boolean playAgain() {
-        System.out.print("Хотите сыграть еще раз? \n Д/Н");
+        System.out.print("Хотите сыграть еще раз? \n Д/Н\n");
         String userInput = inputScanner.nextLine();
         userInput = userInput.toUpperCase();
         return userInput.charAt(0) == 'Д';
